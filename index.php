@@ -4,13 +4,28 @@ session_start();
 if( isset($_SESSION['login']) )
 {
 $a=$_SESSION['login_user'];
-echo " Hello $a";
-
 	header("location: dashboard.php");
 }
 ?>
 <html>
 <head>
+
+	<script type="text/javascript">
+	function validate()
+	{
+		var n=document.forms['signup_form']['name'].value;
+		for(i=0;i<n.length;i++)
+		{
+			var a=n.charCodeAt(i);
+			if(a>=48 && a<=57)
+			{	document.getElementById("2").reset();
+				alert("There is a number in the name?? :D");
+				return false;
+			}
+		}
+	}
+	</script>
+
 	<title>Home Page!! </title>
 	<style type="text/css">
 	body{
@@ -74,7 +89,7 @@ echo " Hello $a";
 		<div class="LoginHover">
 			<p id="logintext"> Log In </p>
 				<div class=LoginContent>
-					<form action='login.php' method="post">
+					<form name="login_form" action='login.php' method="post">
 						<input type="username" required name="usrname" placeholder="Enter Username">
 						<input type="password" required name="usrpass" placeholder="Enter Password">
 						<input type="submit" value="Log In">
@@ -88,7 +103,7 @@ echo " Hello $a";
 			<p> SignUp </p>
 
 			<div class="SignupContent">
-				<form action="signup.php" method="post">
+				<form id="2" name="signup_form" onsubmit="return validate()" action="signup.php" method="post">
 					<input type="text" name="name" required placeholder="Full name please :)">
 					<input type="number" name="phno" required placeholder="Phone Number ;)">
 					<input type="text" name="uname" required placeholder="Username">
