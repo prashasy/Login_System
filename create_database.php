@@ -4,8 +4,6 @@
 	if($conn)
 	{	echo"Connected!!<br>";
 		$sql="CREATE DATABASE User_Database";
-		if(mysqli_query($conn,"DROP DATABASE User_Database"))
-				{echo "Dropped <br>";}
 		$a=mysqli_query($conn, $sql) or die(mysqli_error($conn));
 		if($a)
 		{	
