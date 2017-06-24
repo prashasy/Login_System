@@ -9,7 +9,18 @@ $a=$_SESSION['login_user'];
 ?>
 <html>
 <head>
+	<?php
+	if(!(empty($_GET['msg'])) and  $_SESSION['index_page_redirect_counter'])
+	{
+		?>
+		<script type="text/javascript">
+		alert("You have signed up Successfully");
+		</script>
+		<?php
+		$_SESSION['index_page_redirect_counter']=false;
+	}
 
+	?>
 	<script type="text/javascript">
 	function validate()
 	{
