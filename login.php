@@ -19,7 +19,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 			header('location: dashboard.php');
 		}
 		else
-			{echo "Wrong Credentials";}
+			{echo "Wrong Credentials Try Again";}
 
 	mysqli_close($conn);
 }else
