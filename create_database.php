@@ -7,6 +7,7 @@
 		$a=mysqli_query($conn, $sql) or die(mysqli_error($conn));
 		if($a)
 		{	
+			
 			echo "Database Created Successfully !! <br>";
 			mysqli_select_db($conn, "User_Database");
 			$sql="create table login_data( id int auto_increment primary key, usrname varchar(50) not null, pass varchar(50) not null)";
