@@ -11,7 +11,7 @@
 		{	
 			$user=$_SESSION['login_user'];
 
-			echo "<h1>Welcome  $user </h1>"; //Personalised welcome address
+			echo "<h1>Welcome  $user !</h1>"; //Personalised welcome address
 			echo "<a href=logout.php>Logout</a>"; //Logout Button
 		}
 		else
